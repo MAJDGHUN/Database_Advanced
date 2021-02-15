@@ -21,6 +21,7 @@ You can first download the Visual Studio Code program and then install the above
 <h4>pip install BeautifulSoup</h4>
 <h4>pip install Pandas</h4>
 <h4>pip install Requests</h4>
+<h4>pip install bs4</h4>
 <br></br>
 
 <h2>How to use</h2>
