@@ -70,14 +70,12 @@ def get_data():
 
 
 while True:
-  time.sleep(5)
+  time.sleep(60)
   get_data()
   results = []
   results.append(get_data())
   flatten = lambda l: [item for sublist in l for item in sublist]
   df = pd.DataFrame(flatten(results),columns=['Hash', 'Time', 'Amount(BTC)', 'Amount(USD)'])
-
-
   df = df.sort_values('Amount(USD)', ascending=False)
   print(df.head(1))
 
