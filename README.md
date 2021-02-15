@@ -7,7 +7,7 @@
 
 <h2>Overview</h2>
 
-*-In this task we will perform the process of scraping data from the site (https://www.blockchain.com/btc/unconfirmed-transactions). Based on this data, we will determine the highest price of Bitcoin every 5 seconds.*
+*-In this task we will perform the process of scraping data from the site (https://www.blockchain.com/btc/unconfirmed-transactions). Based on this data, we will determine the most valuable Hash for Bitcoin per minute.*
 <br></br>
 
 This tool was designed in Python using the Visual Studio Code program.Several libraries were also used to complete this work, including:
