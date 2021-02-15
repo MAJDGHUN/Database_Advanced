@@ -28,7 +28,7 @@ You can first download the Visual Studio Code program and then install the above
 If you are working on a Linux operating system, you can do so through the command window and download the tool by using the following command:
 
 <h4>git clone https://github.com/MAJDGHUN/Database_Advanced.git</h4>
-<br></br>
+
 <h4>cd Database_Advanced</h4>
 <br></br>
 After that, you must enter the tool path and give permission through the following command:
