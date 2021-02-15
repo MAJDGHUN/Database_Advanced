@@ -29,9 +29,10 @@ If you are working on a Linux operating system, you can do so through the comman
 
 <h4>git clone https://github.com/MAJDGHUN/Database_Advanced.git</h4>
 <br></br>
-
+<h4>cd Database_Advanced</h4>
+<br></br>
 After that, you must enter the tool path and give permission through the following command:
-<h4>chmod +x scraper.py</h4>
+<h4>chmod +x sc.py</h4>
 <br></br>
 To run the tool, type the following command:
 <h4>python3 sc.py</h4>
