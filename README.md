@@ -17,7 +17,7 @@ This tool was designed in Python using the Visual Studio Code program.Several li
 
 You can first download the Visual Studio Code program and then install the above libraries by using the following commands:
 
-<h4>pip3 install (library)</h4>
+
 <h4>pip install BeautifulSoup</h4>
 <h4>pip install Pandas</h4>
 <h4>pip install Requests</h4>
