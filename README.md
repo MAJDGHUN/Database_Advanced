@@ -26,27 +26,34 @@ You can first download the Visual Studio Code program and then install the above
 
 <h2>How to use</h2>
 
+<h3>Step 1:</h3>
 If you are working on a Linux operating system, you can do so through the command window and download the tool by using the following command:
 
 <h4>git clone https://github.com/MAJDGHUN/Database_Advanced.git</h4>
 
+</h3>Step 2:</h3>
 <h4>cd Database_Advanced</h4>
+
 <br></br>
+
+</h3>Step 3:</h3>
+
 After that, you must enter the tool path and give permission through the following command:
 <h4>chmod +x sc.py</h4>
 <br></br>
+
 But before we run the Python file we have to install  MongoDB which is a general purpose, document-based, distributed database built for modern application developers and for the cloud.
-<h3>tep 1:</h3>
+<h3>Step 4:</h3>
 
 Firstly you have to  download the installmongo.sh file.
 
-</h3>Step 2:</h3>
+</h3>Step 5:</h3>
 
 Then you have to open it and type in the terminal the next command:
 
 <h4>chmod +x installmongo.sh</h4>
 
-<h3>Step 3:</h3>
+<h3>Step 6:</h3>
 
 To run installmongo.sh you type the next command:
 
@@ -55,6 +62,7 @@ To run installmongo.sh you type the next command:
 The installmongo.sh file will install the mongoDB and the run the sc.py file automatically.
 
 To run only the tool, type the following command:
+
 <h4>python3 sc.py</h4>
 <br></br>
 
