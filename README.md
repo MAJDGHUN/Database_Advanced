@@ -58,7 +58,7 @@ To run installmongo.sh you type the next command:
 
 The installmongo.sh file will install the mongoDB and the run the sc.py file automatically.
 <br></br>
-<h3>Notice<h3>: To run only the tool, type the following command:
+<h3>Notice:<h3> To run only the tool, type the following command:
 
 <h4>python3 sc.py</h4>
 <br></br>
@@ -66,3 +66,4 @@ The installmongo.sh file will install the mongoDB and the run the sc.py file aut
 <h2>Tutorials</h2>
 <h4>https://www.edureka.co/blog/web-scraping-with-python/</h4>
 <h4>https://www.youtube.com/watch?v=ng2o98k983k&ab_channel=CoreySchafer</h4>
+<h4>https://www.youtube.com/watch?v=pWbMrx5rVBE&ab_channel=TraversyMedia</h4>
