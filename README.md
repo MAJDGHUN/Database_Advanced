@@ -45,15 +45,12 @@ But before we run the Python file we have to install  MongoDB which is a general
 <br></br>
 <h3>Step 4:</h3>
 
-Firstly you have to  download the installmongo.sh file.
+Firstly you have to  give permission for the installmongo.sh file by using the next command:
+<h4>chmod +x installmongo.sh</h4>
+
+
 <br></br>
 <h3>Step 5:</h3>
-
-Then you have to open it and type in the terminal the next command:
-
-<h4>chmod +x installmongo.sh</h4>
-<br></br>
-<h3>Step 6:</h3>
 
 To run installmongo.sh you type the next command:
 
