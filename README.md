@@ -22,6 +22,7 @@ You can first download the Visual Studio Code program and then install the above
 <h4>pip install Pandas</h4>
 <h4>pip install Requests</h4>
 <h4>pip install bs4</h4>
+<h4>pip install redis</h4>
 <br></br>
 
 <h2>How to use</h2>
@@ -40,27 +41,28 @@ If you are working on a Linux operating system, you can do so through the comman
 
 After that, you must enter the tool path and give permission through the following command:
 <h4>chmod +x sc.py</h4>
+<h4>chmod +x redis_to_mongo.py</h4>
+<h4>chmod +x run_mongo_redis.sh</h4>
+<h4>chmod +x installmongo.shy</h4>
+<br></br>
 
-But before we run the Python file we have to install  MongoDB which is a general purpose, document-based, distributed database built for modern application developers and for the cloud.
 <br></br>
 <h3>Step 4:</h3>
 
-Firstly you have to  give permission for the installmongo.sh file by using the next command:
-<h4>chmod +x installmongo.sh</h4>
-
-
+Before we run the Python file we have to install  MongoDB which is a general purpose, document-based, distributed database built for modern application developers and for the cloud.
+End the you have to install Redis which is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
 <br></br>
-<h3>Step 5:</h3>
 
-To run installmongo.sh you type the next command:
+To install MongoDB and redis you type the next commands:
 
 <h4>bash installmongo.sh</h4>
+<h4>bash installredis.sh</h4>
 
-The installmongo.sh file will install the mongoDB and the run the sc.py file automatically.
+
 <br></br>
-<h3>Notice:<h3> To run only the tool, type the following command:
+Now to run only the tool, we have to run the bash file "redis_to_mongo.", who will run the sc.py file and redis_to_mongo.py file.You type the following command:
+<h4>bash run_mongo_redis.sh</h4>
 
-<h4>python3 sc.py</h4>
 <br></br>
 
 <h2>Tutorials</h2>
