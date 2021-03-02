@@ -79,7 +79,7 @@ def get_data(hasht,timet,btct,usdt,Red,C_cryp):
 
 
         if usd3 is not None:
-            
+            usd4 = btc3 * usd4
             usdt_arr.append(usd4)
 
 
