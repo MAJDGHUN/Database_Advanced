@@ -34,7 +34,6 @@ If you are working on a Linux operating system, you can do so through the comman
 <br></br>
 <h3>Step 2:</h3>
 <h4>cd Database_Advanced</h4>
-
 <br></br>
 
 <h3>Step 3:</h3>
@@ -44,7 +43,6 @@ After that, you must enter the tool path and give permission through the followi
 <h4>chmod +x redis_to_mongo.py</h4>
 <h4>chmod +x run_mongo_redis.sh</h4>
 <h4>chmod +x installmongo.shy</h4>
-<br></br>
 
 <br></br>
 <h3>Step 4:</h3>
@@ -73,9 +71,9 @@ To show the most valuable Hash or price for Bitcoin per minute you type the next
 <h4>redis-cli</h4>
 <br></br>
 For hashes:
-<h4>LRANGE Hash </h4>
+<h4>LRANGE Hash 0 -1</h4>
   
-For price
+For prices
 <h4>LRANGE Amount(USD) 0 -1</h4>
 
 
