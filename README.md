@@ -71,8 +71,9 @@ Now to run only the tool, we have to run the bash file "redis_to_mongo.", who wi
 To show the most valuable Hash or price for Bitcoin per minute you type the next commands:
 
 <h4>redis-cli</h4>
+<br></br>
 For hashes:
-<h4>LRANGE Hash /h4>
+<h4>LRANGE Hash </h4>
   
 For price
 <h4>LRANGE Amount(USD) 0 -1</h4>
