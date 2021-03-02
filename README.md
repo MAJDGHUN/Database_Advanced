@@ -60,12 +60,27 @@ To install MongoDB and redis you type the next commands:
 
 
 <br></br>
+<h3>Step 5:</h3>
+
 Now to run only the tool, we have to run the bash file "redis_to_mongo.", who will run the sc.py file and redis_to_mongo.py file.You type the following command:
 <h4>bash run_mongo_redis.sh</h4>
 
+
 <br></br>
+<h3>Step 5:</h3>
+To show the most valuable Hash or price for Bitcoin per minute you type the next commands:
+
+<h4>redis-cli</h4>
+For hashes:
+<h4>LRANGE Hash /h4>
+  
+For price
+<h4>LRANGE Amount(USD) 0 -1</h4>
+
+
 
 <h2>Tutorials</h2>
 <h4>https://www.edureka.co/blog/web-scraping-with-python/</h4>
 <h4>https://www.youtube.com/watch?v=ng2o98k983k&ab_channel=CoreySchafer</h4>
 <h4>https://www.youtube.com/watch?v=pWbMrx5rVBE&ab_channel=TraversyMedia</h4>
+<h4>https://www.tutorialspoint.com/redis/redis_overview.htm</h4>
