@@ -5,13 +5,28 @@ from bs4 import BeautifulSoup
 import requests
 import time
 import pymongo as mongo
+import redis
 
 
 client = mongo.MongoClient("mongodb://127.0.0.1:27017")
+Red = redis.Redis()
 
 
-  
-def get_data():
+hasht =[]
+timet =[]
+btct =[]
+usdt =[]
+
+hasht_arr = []
+timet_arr =[]
+btct_arr =[]
+usdt_arr =[]
+
+db = client["My_DB"]
+C_cryp = db["My_Col"]
+
+def get_data(hasht,timet,btct,usdt,Red,C_cryp):
+    
 
     
     r = requests.get('https://www.blockchain.com/btc/unconfirmed-transactions')
@@ -19,89 +34,106 @@ def get_data():
     soup = BeautifulSoup(content, "html.parser")
     #print(soup)
 
-    alls = []
+    
     for d in soup.findAll('div', attrs={'class':'sc-1g6z4xm-0 hXyplo'}):
         #print(d)
         Hash = d.find('a', attrs={'class':'sc-1r996ns-0 fLwyDF sc-1tbyx6t-1 kCGMTY iklhnl-0 eEewhk d53qjk-0 ctEFcK'})
         Time = d.findAll('span', attrs={'class':'sc-1ryi78w-0 cILyoi sc-16b9dsl-1 ZwupP u3ufsr-0 eQTRKC'})
-        btc2 = d.findAll('span', attrs={'class':'sc-1ryi78w-0 cILyoi sc-16b9dsl-1 ZwupP u3ufsr-0 eQTRKC'})
+        btc = d.find('div', class_='sc-1au2w4e-0 fTyXWG')
+        
+        btc3 = float(btc.text[12:len(btc.text) - 3].strip())
+        
+        
+        
         usd3= d.findAll('span', attrs={'class':'sc-1ryi78w-0 cILyoi sc-16b9dsl-1 ZwupP u3ufsr-0 eQTRKC'})
+        usd4= float(usd3[2].text[1:].replace(',','').replace('$',''))
        
 
         all1=[]
 
         if Hash is not None:
-            all1.append(Hash.text)
+            hasht_arr.append(Hash.text)
+            Red.rpush("Hash", str(Hash.text))
             
         
             
         else:
-            all1.append("unknown-product")
+            hasht_arr.append("unknown-product")
 
 
         if Time is not None:
-            all1.append(Time[0].text)
+            timet_arr.append(Time[0].text)
+            Red.rpush("Time", str(Time[0].text))
            
             
         else:
-            all1.append("unknown-Time")
+            timet_arr.append("unknown-Time")
 
-        if btc2 is not None:
-            all1.append(btc2[1].text)
+        if btc3 is not None:
+            btct_arr.append(btc3)
+            Red.rpush("Amount(BTC)", str(btc3))
             
             
         else:
-            all1.append("unknown-btc2")
+            btct_arr.append("unknown-btc2")
 
 
         if usd3 is not None:
-            all1.append(float(usd3[2].text.replace(',','').replace('$','')))
             
-            
+            usdt_arr.append(usd4)
+
+
+            #usdt_arr.append(float(usd4[2]))
+            Red.rpush("Amount(USD)", str(usd4))
+        
         else:
-            all1.append("unknown-usd2")
-
-        
-        
-        alls.append(all1) 
-    return alls
+            usdt_arr.append("unknown-btc2")
 
 
+    Red.expire("Hash", 60)
+    Red.expire("Time", 60)
+    Red.expire("Amount(BTC)", 60)
+    Red.expire("Amount(USD)", 60)
+    #My_Crypto = {"Hash": hasht_arr, "Time" : timet_arr, "Amount(BTC)" : btct_arr, "Amount(USD)" : usdt_arr}
+    #print(My_Crypto)
+    #C_cryp.insert_one(My_Crypto)
+
+    #results = []
+    #results.append(get_data())
+    #flatten = lambda l: [item for sublist in l for item in sublist]
+    #df = pd.DataFrame(flatten(results),columns=['Hash', 'Time', 'Amount(BTC)', 'Amount(USD)'])
+    #df = df.sort_values('Amount(USD)', ascending=False)
+
+    #hasht =df['Hash'].iloc[0]
+    #timet =df['Time'].iloc[0]
+    #btct =df['Amount(BTC)'].iloc[0]
+    #usdt =df['Amount(USD)'].iloc[0]
+
+    
 
 
   
-db = client["My_DB"]
-c_crypto = db["My_Col"]
+
 
 
 while True:
+  
+
+  get_data(hasht,timet,btct,usdt,Red,C_cryp)
   time.sleep(60)
 
-
-  get_data()
-  results = []
-  results.append(get_data())
-  flatten = lambda l: [item for sublist in l for item in sublist]
-  df = pd.DataFrame(flatten(results),columns=['Hash', 'Time', 'Amount(BTC)', 'Amount(USD)'])
-  df = df.sort_values('Amount(USD)', ascending=False)
-
-  hasht =df['Hash'].iloc[0]
-  timet =df['Time'].iloc[0]
-  btct =df['Amount(BTC)'].iloc[0]
-  usdt =df['Amount(USD)'].iloc[0]
-
-  My_Crypto = {"Hash": hasht, "Time" : timet, "Amount(BTC)" : btct, "Amount(USD)" : usdt}
-  c_crypto.insert_one(My_Crypto)
-
-
-
-
-  print(hasht,timet,btct,usdt)
-  df.head(0).to_csv("logfile.txt", header=None, index=None, sep='\t', mode='a')
+  #print(hasht,timet,btct,usdt)
+  #df.head(0).to_csv("logfile.log", header=None, index=None, sep='\t', mode='w')
 
   
   
 
+
+
+
+
+
+  
 
 
 
