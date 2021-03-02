@@ -50,7 +50,7 @@ After that, you must enter the tool path and give permission through the followi
 <h3>Step 4:</h3>
 
 Before we run the Python file we have to install  MongoDB which is a general purpose, document-based, distributed database built for modern application developers and for the cloud.
-End the you have to install Redis which is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
+Then we have to install Redis which is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
 <br></br>
 
 To install MongoDB and redis you type the next commands:
