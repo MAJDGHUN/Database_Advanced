@@ -42,7 +42,7 @@ After that, you must enter the tool path and give permission through the followi
 <h4>chmod +x sc.py</h4>
 <h4>chmod +x redis_to_mongo.py</h4>
 <h4>chmod +x run_mongo_redis.sh</h4>
-<h4>chmod +x installmongo.shy</h4>
+<h4>chmod +x installmongo.sh</h4>
 
 <br></br>
 <h3>Step 4:</h3>
